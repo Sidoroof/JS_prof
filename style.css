@@ -53,3 +53,9 @@ border-bottom:  2px solid rgb(90, 146, 90);
    font: 1em sans-serif;
 text-align: right;
 }
+.sum_basket{
+  text-align: right;
+  background-color: rgb(207, 238, 207);
+  border: 2px solid rgb(90, 146, 90);
+  color: red;
+}
