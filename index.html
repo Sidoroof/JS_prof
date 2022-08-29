@@ -7,11 +7,19 @@
 </head>
 <body>
     <header class="hd-area">
-        <button class="btn-cart" type="button">Корзина</button>
+        <button class="btn-cart"   type="button" onclick="alerted();">Корзина</button>
     </header>
     <main>
+        <div id="openModal" class="modalDialog">
+            <div class="divModal">
+                <a href="#close" title="Закрыть" onclick="closeAlerted();" class="close">X</a>
+            </div>
+        </div>
         <div class="products"></div>
     </main>
+    <footer>
+    <h1 class = "sum_basket"></h1>
+    </footer>
     <script src="js/main.js"></script>
 </body>
 </html>
