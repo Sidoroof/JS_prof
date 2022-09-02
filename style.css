@@ -16,8 +16,8 @@
    display:inline-block;
    border-radius: 10px;
    border: 2px solid rgb(90, 146, 90);
-   width: 10%;
-   min-width: 150px;
+   /* width: 50px; */
+    min-width: 150px; 
    height: 250px;
    margin-bottom: 5px;
    margin-left: 5px;
