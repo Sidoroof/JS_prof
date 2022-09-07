@@ -6,8 +6,15 @@
     <title>Интернет-магазин</title>
 </head>
 <body>
+    <div id="app">
     <header class="hd-area">
-        <button class="btn-cart"   type="button" onclick="alerted();">Корзина</button>
+        <button class="btn-cart"   type="button"  onclick="alerted();">Корзина</button>
+        <form action="#" class="search-form">
+            <input type="text"  class="search-field" v-model="userSearch">
+            <button class="btn-search" @click="filter()" type="submit">
+                <i class="fas fa-search"></i>
+            </button>
+        </form>
     </header>
     <main>
         <div id="openModal" class="modalDialog">
@@ -16,14 +23,34 @@
             </div>
             
         </div>
-
-        <div class="products"></div>
+        <div class="products ">
+            <div class="product-item invisible" v-for="product of products" :key="product.id_product">
+                <img  class="img-style" :src="imgCatalog" alt="Some img">
+                <div class="desc">
+                    <h3>{{product.product_name}}</h3>
+                    <p>{{product.price}} $</p>
+                    <button class="buy-btn" @click="addProduct(product)">Купить</button>
+ 
+                </div>
+            </div>
+        </div>
+        <h1>Товары в корзине</h1>
+        <div >
+            <div class="product-item"  v-for="product of cart" :key="cart.id_cart">
+                <div>
+                    <h3>{{product.product_name}}</h3>                   
+                    <p>Количество {{product.quantity}} </p>
+                    <p>Стоимость {{product.price*product.quantity}}</p>
+                </div>
+            </div>
+        </div>
    
     </main>
-    <footer>
+    <!-- <footer>
     <h1 class = "sum_basket"></h1>
-    </footer>
-    <div>
+    </footer> -->
+</div>
+    <!-- <div>
         <p class="dz">One: 'Hi Mary.' Two: 'Oh, hi.' <br>
             One: 'How are you doing?'<br>
             Two: 'I'm doing alright. How about you?'<br>
@@ -44,7 +71,9 @@
             <button class="buy-btn"   type="button" onclick="zd2();">Задание2</button>
             <p >Результат</p>
             <p class="rezultat"></p>
-    </div>
+    </div> -->
+    <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js" integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
