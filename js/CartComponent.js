@@ -13,7 +13,7 @@ Vue.component('cart-item', {
     <div class="cart-item">
     <div class="product-basketitem">
         <img class="img-style" :src="img" alt="Some img">
-        <h3>{{cartitems.product_name}}</h3>                   
+        <h3>{{cartitems.product_name}}</h3>
         <p>Количество {{cartitems.quantity}} </p>
         <p>Стоимость {{cartitems.price*cartitems.quantity}}</p>
         <button class="buy-btn" @click="$root.remove(cartitems)">&times;</button>
